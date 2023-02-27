@@ -9,8 +9,8 @@ def filter_top_words(df, k):
     """
     Filters the k most common words in the
     :param df: (int) this is what parameter 1 is
-    :param k: (int) Number of top words 
-    :return: 
+    :param k: (int) Number of top words
+    :return:
     """
     top_words_set = set()
     labels_list = list(df["label"])
@@ -24,13 +24,13 @@ def filter_top_words(df, k):
 
 
 def _code_mapping(df, src, targ):
-    """
-    Map the labels with the codes
-    :param df (DataFrame): The dataframe
-    :param src: (df) The source nodes of the Sankey diagram
-    :param targ: (df) The target nodes of the Sankey diagram
-    :return: The DataFrame and the labels
-    """
+  """
+  Map the labels with the codes
+  :param df (DataFrame): The dataframe
+  :param src: (df) The source nodes of the Sankey diagram
+  :param targ: (df) The target nodes of the Sankey diagram
+  :return: The DataFrame and the labels
+  """
   # Get distinct labels
   labels = sorted(list(set(list(df[src]) + list(df[targ]))))
 
@@ -80,4 +80,4 @@ def make_sankey(df, src, targ, vals, word_list, k, **kwargs):
     # Initialize and display Sankey diagram
     sk = go.Sankey(valueformat=".0f", link=link, node=node)
     fig = go.Figure(sk)
-    fig.show()
+    return fig
