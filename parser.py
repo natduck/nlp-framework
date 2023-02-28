@@ -5,9 +5,9 @@ punctuations = """!()-![]{};:,+'",<>./?@#$%^&*_~Â""" # List of punctuation to r
 
 def text_parse(textfile):
     """
-
+    Breaks down and cleans the whitespace of the text 
     :param textfile: (str) Name of the text file
-    :return: parsedReview (str): A
+    :return: parsedReview (str): A broken down version of the text 
     """
     # split the review into words
     splitReview = textfile.split()
@@ -22,11 +22,18 @@ def text_clean(textfile):
     :param textfile: (str) Name of the text file
     :return: clean_review (str) A cleaned version of the text
     """
+    # Create a list of clean words
     clean_words = []
+    
+    # Split text
     splitReview = textfile.split()
+    
+    # Check if each word is a word and not in the stopwords_list
     for w in splitReview:
         if w.isalpha() and w not in stopwords_list:
             clean_words.append(w.lower())
+            
+    # Join each word as a string seperated by space 
     clean_review = " ".join(clean_words)
 
     return clean_review
