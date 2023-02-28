@@ -23,9 +23,17 @@ def main():
     tt.load_stop_words(stopfile="text_files/stopwords.txt")
 
     # Show visualizations
+    
+    # Display wordclouds
     tt.wordcloud()
+    
+    # Show Sankey diagram of the top 5 words for each file 
     tt.wordcount_sankey(k=5)
+    
+    # Show a Sankey diagram of specific words
     tt.wordcount_sankey(word_list=["mbta", "boston", "blue", "red", "green", "orange", "line", "silver", "train"])
+    
+    # Show sentiment bar chart
     tt.sentiment_bar()
 
 # Run main
