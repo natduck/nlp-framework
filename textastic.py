@@ -1,11 +1,16 @@
 """
 Core framework class for NLP Comparative Analysis
+
+Nathan Brito, Kelly Chen, Anh Nguyen, Tung Giang
+DS3500 / A Reusable Extensible Framework for Natural Language Processing
+Homework 3
+Date Created: 2/15/2023 / Date Last Updated: 2/27/2023
 """
 from nltk.corpus import stopwords
 from collections import defaultdict
 from parser import text_parse, text_clean
 from sankey import make_sankey
-from exception import import_file_contents
+from exception import ParserException
 import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
